@@ -3,8 +3,6 @@ version: 3
 vars:
   PACKAGE_NAME: starship
   PACKAGE_VERSION: 1.23.0
-  GIT_ROOT_DIR:
-    sh: git rev-parse --show-toplevel
 
 tasks:
   do-build:
