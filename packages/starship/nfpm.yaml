@@ -1,0 +1,15 @@
+name: starship
+arch: ${PACKAGE_ARCH}
+version: ${PACKAGE_VERSION}
+section: default
+priority: extra
+maintainer: Nick Ng <yc.ng@nus.edu.sg>
+description: |
+  The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+homepage: https://starship.rs/
+license: ISC
+
+contents:
+  - src: .cache/${PACKAGE_ARCH}/${PACKAGE_VERSION}/starship
+    dst: /usr/bin/starship
+    expand: true
