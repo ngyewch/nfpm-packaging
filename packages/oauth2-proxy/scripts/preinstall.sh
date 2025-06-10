@@ -3,10 +3,13 @@
 set -e
 
 SERVICE_USER=oauth2-proxy
+SERVICE_GROUP=oauth2-proxy
 
 case "$1" in
   install|upgrade)
-    id -u ${SERVICE_USER} > /dev/null 2>&1 || adduser --system --no-create-home --quiet ${SERVICE_USER}
+    addgroup --system --quiet ${SERVICE_GROUP}
+    SERVICE_GROUP_ID=$(getent group vagrant | cut -d: -f3)
+    adduser --system --gid ${SERVICE_GROUP_ID} --no-create-home --quiet ${SERVICE_USER}
     mkdir -p /etc/oauth2-proxy
   ;;
 
