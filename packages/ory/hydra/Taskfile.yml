@@ -1,0 +1,27 @@
+version: 3
+
+vars:
+  PACKAGE_NAME: hydra
+  PACKAGE_VERSION: 2.3.0
+
+tasks:
+  do-build:
+    cmds:
+      - ubi --exe {{.PACKAGE_NAME}} --in .cache/{{.PACKAGE_ARCH}}/{{.PACKAGE_VERSION}} --url https://github.com/ory/hydra/releases/download/v{{.PACKAGE_VERSION}}/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}-linux_{{or .RELEASE_ARCH .PACKAGE_ARCH}}.tar.gz
+      - mkdir -p build
+      - nfpm package --packager deb --target build/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}_{{.PACKAGE_ARCH}}.deb
+      - nfpm package --packager rpm --target build/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}_{{.PACKAGE_ARCH}}.rpm
+    env:
+      PACKAGE_NAME: "{{.PACKAGE_NAME}}"
+      PACKAGE_VERSION: "{{.PACKAGE_VERSION}}"
+      PACKAGE_ARCH: "{{.PACKAGE_ARCH}}"
+  
+  build:
+    cmds:
+      - task: do-build
+        vars:
+          PACKAGE_ARCH: amd64
+          RELEASE_ARCH: 64bit
+      - task: do-build
+        vars:
+          PACKAGE_ARCH: arm64
