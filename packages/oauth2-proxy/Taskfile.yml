@@ -7,7 +7,7 @@ vars:
 tasks:
   do-build:
     cmds:
-      - ubi --exe oauth2-proxy --in .cache/{{.PACKAGE_ARCH}}/{{.PACKAGE_VERSION}} --url https://github.com/oauth2-proxy/oauth2-proxy/releases/download/v{{.PACKAGE_VERSION}}/oauth2-proxy-v{{.PACKAGE_VERSION}}.linux-{{.PACKAGE_ARCH}}.tar.gz
+      - ubi --exe {{.PACKAGE_NAME}} --in .cache/{{.PACKAGE_ARCH}}/{{.PACKAGE_VERSION}} --url https://github.com/oauth2-proxy/oauth2-proxy/releases/download/v{{.PACKAGE_VERSION}}/{{.PACKAGE_NAME}}-v{{.PACKAGE_VERSION}}.linux-{{.PACKAGE_ARCH}}.tar.gz
       - mkdir -p build
       - nfpm package --packager deb --target build/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}_{{.PACKAGE_ARCH}}.deb
       - nfpm package --packager rpm --target build/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}_{{.PACKAGE_ARCH}}.rpm
