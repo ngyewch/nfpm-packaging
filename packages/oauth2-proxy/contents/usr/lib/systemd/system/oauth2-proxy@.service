@@ -2,8 +2,8 @@
 Description=%I oauth2-proxy daemon service
 After=network.target network-online.target nss-lookup.target basic.target
 Wants=network-online.target nss-lookup.target
-StartLimitIntervalSec=30
-StartLimitBurst=3
+#StartLimitIntervalSec=30
+#StartLimitBurst=3
 
 [Service]
 User=oauth2-proxy
@@ -17,14 +17,14 @@ LimitNOFILE=65535
 NoNewPrivileges=true
 ProtectHome=true
 ProtectSystem=full
-ProtectHostname=true
-ProtectControlGroups=true
-ProtectKernelModules=true
-ProtectKernelTunables=true
-LockPersonality=true
-RestrictRealtime=yes
-RestrictNamespaces=yes
-MemoryDenyWriteExecute=yes
+#ProtectHostname=true
+#ProtectControlGroups=true
+#ProtectKernelModules=true
+#ProtectKernelTunables=true
+#LockPersonality=true
+#RestrictRealtime=yes
+#RestrictNamespaces=yes
+#MemoryDenyWriteExecute=yes
 PrivateDevices=yes
 PrivateTmp=true
 CapabilityBoundingSet=

@@ -3,7 +3,7 @@
 set -e
 
 case "$1" in
-  configure)
+  configure|1|2)
     systemctl daemon-reload
   ;;
 
