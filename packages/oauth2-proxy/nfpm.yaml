@@ -1,6 +1,6 @@
-name: oauth2-proxy
-arch: ${PACKAGE_ARCH}
-version: ${PACKAGE_VERSION}
+name: ${NAME}
+arch: ${ARCH}
+version: ${VERSION}
 priority: optional
 maintainer: Nick Ng <ngyewch@gmail.com>
 description: |
@@ -9,7 +9,7 @@ homepage: https://oauth2-proxy.github.io/oauth2-proxy
 license: MIT
 
 contents:
-  - src: .cache/${PACKAGE_ARCH}/${PACKAGE_VERSION}/oauth2-proxy
+  - src: ${ARCHIVE_DIR}/oauth2-proxy
     dst: /usr/bin/oauth2-proxy
     expand: true
   - src: contents

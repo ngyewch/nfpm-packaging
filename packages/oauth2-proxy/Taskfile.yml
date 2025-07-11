@@ -1,26 +1,10 @@
 version: 3
 
-vars:
-  PACKAGE_NAME: oauth2-proxy
-  PACKAGE_VERSION: 7.9.0
+env:
+  VERSION: 7.9.0
 
 tasks:
-  do-build:
-    cmds:
-      - ubi --exe {{.PACKAGE_NAME}} --in .cache/{{.PACKAGE_ARCH}}/{{.PACKAGE_VERSION}} --url https://github.com/oauth2-proxy/oauth2-proxy/releases/download/v{{.PACKAGE_VERSION}}/{{.PACKAGE_NAME}}-v{{.PACKAGE_VERSION}}.linux-{{.PACKAGE_ARCH}}.tar.gz
-      - mkdir -p build
-      - nfpm package --packager deb --target build/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}_{{.PACKAGE_ARCH}}.deb
-      - nfpm package --packager rpm --target build/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}_{{.PACKAGE_ARCH}}.rpm
-    env:
-      PACKAGE_NAME: "{{.PACKAGE_NAME}}"
-      PACKAGE_VERSION: "{{.PACKAGE_VERSION}}"
-      PACKAGE_ARCH: "{{.PACKAGE_ARCH}}"
-  
   build:
+    desc: Build
     cmds:
-      - task: do-build
-        vars:
-          PACKAGE_ARCH: amd64
-      - task: do-build
-        vars:
-          PACKAGE_ARCH: arm64
+      - nfpm-helper build

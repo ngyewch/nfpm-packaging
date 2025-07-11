@@ -1,32 +1,10 @@
 version: 3
 
-vars:
-  PACKAGE_NAME: starship
-  PACKAGE_VERSION: 1.23.0
+env:
+  VERSION: 1.23.0
 
 tasks:
-  do-build:
-    cmds:
-      - ubi --exe {{.PACKAGE_NAME}} --in .cache/{{.PACKAGE_ARCH}}/{{.PACKAGE_VERSION}} --url https://github.com/starship/starship/releases/download/v{{.PACKAGE_VERSION}}/{{.FILENAME}}
-      - mkdir -p build
-      - nfpm package --packager deb --target build/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}_{{.PACKAGE_ARCH}}.deb
-      - nfpm package --packager rpm --target build/{{.PACKAGE_NAME}}_{{.PACKAGE_VERSION}}_{{.PACKAGE_ARCH}}.rpm
-    env:
-      PACKAGE_NAME: "{{.PACKAGE_NAME}}"
-      PACKAGE_VERSION: "{{.PACKAGE_VERSION}}"
-      PACKAGE_ARCH: "{{.PACKAGE_ARCH}}"
-  
   build:
+    desc: Build
     cmds:
-      - task: do-build
-        vars:
-          PACKAGE_ARCH: amd64
-          FILENAME: starship-x86_64-unknown-linux-musl.tar.gz
-      - task: do-build
-        vars:
-          PACKAGE_ARCH: arm64
-          FILENAME: starship-aarch64-unknown-linux-musl.tar.gz
-      - task: do-build
-        vars:
-          PACKAGE_ARCH: arm7
-          FILENAME: starship-arm-unknown-linux-musleabihf.tar.gz
+      - nfpm-helper build

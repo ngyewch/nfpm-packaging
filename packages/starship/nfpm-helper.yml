@@ -1,0 +1,11 @@
+name: starship
+packagers:
+  - deb
+  - rpm
+outputs:
+  - arch: amd64
+    url: https://github.com/starship/starship/releases/download/v${VERSION}/${NAME}-x86_64-unknown-linux-musl.tar.gz
+  - arch: arm64
+    url: https://github.com/starship/starship/releases/download/v${VERSION}/${NAME}-aarch64-unknown-linux-musl.tar.gz
+  - arch: arm7
+    url: https://github.com/starship/starship/releases/download/v${VERSION}/${NAME}-arm-unknown-linux-musleabihf.tar.gz
