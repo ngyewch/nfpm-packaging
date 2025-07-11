@@ -1,6 +1,6 @@
-name: hydra
-arch: ${PACKAGE_ARCH}
-version: ${PACKAGE_VERSION}
+name: ${NAME}
+arch: ${ARCH}
+version: ${VERSION}
 priority: optional
 maintainer: Nick Ng <ngyewch@gmail.com>
 description: |
@@ -9,7 +9,7 @@ homepage: https://github.com/ory/hydra
 license: MIT
 
 contents:
-  - src: .cache/${PACKAGE_ARCH}/${PACKAGE_VERSION}/hydra
+  - src: ${ARCHIVE_DIR}/hydra
     dst: /usr/bin/hydra
     expand: true
   - src: contents
