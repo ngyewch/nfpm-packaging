@@ -1,0 +1,29 @@
+#!/bin/sh
+# postrm script for node_exporter
+# Script executed after the package is removed.
+
+set -e
+
+case "$1" in
+  purge)
+        rm -rf /var/lib/prometheus/node_exporter/ \
+            /var/log/prometheus/node_exporter.log \
+            /var/log/prometheus/node_exporter.log.* \
+            /run/prometheus/node_exporter.pid
+	# We do NOT remove the system user.
+	;;
+esac
+
+# Automatically added by dh_installsystemd/13.24.2
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.24.2
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'node_exporter.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,30 @@
+name: ${NAME}
+arch: ${ARCH}
+version: ${VERSION}
+priority: optional
+maintainer: Nick Ng <ngyewch@gmail.com>
+description: |
+  Exporter for machine metrics
+homepage: https://github.com/prometheus/node_exporter
+license: Apache 2.0
+
+contents:
+  - src: ${ARCHIVE_DIR}/node_exporter
+    dst: /usr/bin/node_exporter
+    expand: true
+
+  - src: contents
+    dst: /
+    type: tree
+
+  - dst: /var/log/prometheus
+    type: dir
+
+  - dst: /var/lib/prometheus/node_exporter
+    type: dir
+
+scripts:
+  preinstall: scripts/preinst
+  postinstall: scripts/postinst
+  preremove: scripts/prerm
+  postremove: scripts/postrm

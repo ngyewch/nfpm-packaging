@@ -1,0 +1,14 @@
+name: node_exporter
+download:
+  url_template: https://github.com/prometheus/node_exporter/releases/download/v${VERSION}/${NAME}-${VERSION}.linux-${ARCH}.tar.gz
+strip_components: 1
+packagers:
+  - deb
+  - rpm
+outputs:
+  - arch: amd64
+  - arch: arm64
+  - arch: arm7
+    download:
+      env:
+        ARCH: armv7
