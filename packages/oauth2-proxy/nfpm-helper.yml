@@ -1,5 +1,6 @@
 name: oauth2-proxy
-download_url_template: https://github.com/oauth2-proxy/oauth2-proxy/releases/download/v${VERSION}/${NAME}-v${VERSION}.linux-${ARCH}.tar.gz
+download:
+  url_template: https://github.com/oauth2-proxy/oauth2-proxy/releases/download/v${VERSION}/${NAME}-v${VERSION}.linux-${ARCH}.tar.gz
 strip_components: 1
 packagers:
   - deb

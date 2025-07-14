@@ -1,4 +1,0 @@
-[tools]
-task = '3.44.0'
-nfpm = '2.43.0'
-'ubi:ngyewch/nfpm-helper' = '0.1.1'

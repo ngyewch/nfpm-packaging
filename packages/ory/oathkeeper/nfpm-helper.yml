@@ -1,9 +1,12 @@
 name: oathkeeper
+download:
+  url_template: https://github.com/ory/oathkeeper/releases/download/v${VERSION}/${NAME}_${VERSION}-linux_${ARCH}.tar.gz
 packagers:
   - deb
   - rpm
 outputs:
   - arch: amd64
-    url: https://github.com/ory/oathkeeper/releases/download/v${VERSION}/${NAME}_${VERSION}-linux_64bit.tar.gz
+    download:
+      env:
+        ARCH: 64bit
   - arch: arm64
-    url: https://github.com/ory/oathkeeper/releases/download/v${VERSION}/${NAME}_${VERSION}-linux_arm64.tar.gz
