@@ -1,0 +1,9 @@
+name: gost
+download:
+  url_template: https://github.com/go-gost/gost/releases/download/v${VERSION}/${NAME}_${VERSION}_linux_${ARCH}.tar.gz
+packagers:
+  - deb
+  - rpm
+outputs:
+  - arch: amd64
+  - arch: arm64
