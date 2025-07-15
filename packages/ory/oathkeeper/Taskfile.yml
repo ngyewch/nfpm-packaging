@@ -1,10 +1,7 @@
 version: 3
 
-env:
-  VERSION: 0.40.9
-
 tasks:
   build:
     desc: Build
     cmds:
-      - nfpm-helper build
+      - VERSION=0.40.9 nfpm-helper build
