@@ -8,10 +8,11 @@ Wants=network-online.target nss-lookup.target
 [Service]
 User=oauth2-proxy
 Group=oauth2-proxy
+EnvironmentFile=-/etc/oauth2-proxy/%i.env
 Restart=on-failure
 RestartSec=30
 WorkingDirectory=/etc/oauth2-proxy
-ExecStart=/usr/bin/oauth2-proxy --config=/etc/oauth2-proxy/%i.cfg
+ExecStart=/usr/bin/oauth2-proxy --config=/etc/oauth2-proxy/%i.toml
 ExecReload=/bin/kill -HUP $MAINPID
 LimitNOFILE=65535
 NoNewPrivileges=true
