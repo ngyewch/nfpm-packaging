@@ -1,9 +1,6 @@
 name: hydra
 download:
   url_template: https://github.com/ory/hydra/releases/download/v${VERSION}/${NAME}_${VERSION}-linux_${ARCH}.tar.gz
-packagers:
-  - deb
-  - rpm
 outputs:
   - arch: amd64
     download:

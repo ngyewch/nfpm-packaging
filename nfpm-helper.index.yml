@@ -1,0 +1,13 @@
+packages:
+  - name: gost
+    dir: packages/gost
+  - name: oauth2-proxy
+    dir: packages/oauth2-proxy
+  - name: ory/hydra
+    dir: packages/ory/hydra
+  - name: ory/oathkeeper
+    dir: packages/ory/oathkeeper
+  - name: prometheus/node_exporter
+    dir: packages/prometheus/node_exporter
+  - name: starship
+    dir: packages/starship
