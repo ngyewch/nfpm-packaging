@@ -1,7 +1,0 @@
-version: 3
-
-tasks:
-  build:
-    desc: Build
-    cmds:
-      - VERSION=2.3.0 nfpm-helper build
