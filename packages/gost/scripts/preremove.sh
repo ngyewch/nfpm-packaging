@@ -4,7 +4,7 @@ set -e
 
 case "$1" in
   remove|0)
-    systemctl stop node_exporter.service >/dev/null || true
+    systemctl stop gost.service >/dev/null || true
   ;;
 
   upgrade|deconfigure|failed-upgrade)

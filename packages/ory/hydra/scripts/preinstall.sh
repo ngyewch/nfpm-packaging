@@ -14,6 +14,9 @@ case "$1" in
     mkdir -p /etc/ory/hydra /var/lib/${SERVICE_USER}/hydra
   ;;
 
+  abort-upgrade)
+  ;;
+
   *)
     echo "preinstall.sh called with unknown argument '$1'" >&2
     exit 1

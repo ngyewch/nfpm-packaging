@@ -14,6 +14,9 @@ case "$1" in
     mkdir -p /etc/oauth2-proxy
   ;;
 
+  abort-upgrade)
+  ;;
+
   *)
     echo "preinstall.sh called with unknown argument '$1'" >&2
     exit 1

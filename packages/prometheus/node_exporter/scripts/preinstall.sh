@@ -13,6 +13,9 @@ case "$1" in
         && exit ${EXIT_CODE}
   ;;
 
+  abort-upgrade)
+  ;;
+
   *)
     echo "preinstall.sh called with unknown argument '$1'" >&2
     exit 1

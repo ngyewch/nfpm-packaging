@@ -8,7 +8,6 @@ case "$1" in
   ;;
 
   abort-upgrade|abort-remove|abort-deconfigure)
-    :
   ;;
 
   *)
