@@ -22,10 +22,4 @@ esac
 
 systemctl --system daemon-reload >/dev/null || true
 
-case "$1" in
-  purge|0)
-    systemctl purge node_exporter.service >/dev/null || true
-  ;;
-esac
-
 exit 0
