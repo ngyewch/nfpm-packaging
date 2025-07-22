@@ -7,10 +7,11 @@ SERVICE_GROUP=ory
 
 case "$1" in
   install|upgrade|1|2)
-    groupadd --system --force ${SERVICE_GROUP}
-    SERVICE_GROUP_ID=$(getent group ${SERVICE_GROUP} | cut -d: -f3)
-    adduser --system --gid ${SERVICE_GROUP_ID} --home /var/lib/${SERVICE_USER} ${SERVICE_USER}
-    mkdir -p /etc/ory/oathkeeper
+    useradd --system --user-group --home-dir /var/lib/${SERVICE_USER} --create-home --shell /sbin/nologin ${SERVICE_USER} \
+        || EXIT_CODE=$? \
+        && [ -n "${EXIT_CODE+set}" ] && [ "${EXIT_CODE}" -ne 9 ] \
+        && exit ${EXIT_CODE}
+    mkdir -p /etc/ory/oathkeeper /var/lib/${SERVICE_USER}/oathkeeper
   ;;
 
   *)
