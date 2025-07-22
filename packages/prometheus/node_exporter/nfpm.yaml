@@ -20,11 +20,8 @@ contents:
   - dst: /var/log/prometheus
     type: dir
 
-  - dst: /var/lib/prometheus/node_exporter
-    type: dir
-
 scripts:
-  preinstall: scripts/preinst
-  postinstall: scripts/postinst
-  preremove: scripts/prerm
-  postremove: scripts/postrm
+  preinstall: scripts/preinstall.sh
+  postinstall: scripts/postinstall.sh
+  preremove: scripts/preremove.sh
+  postremove: scripts/postremove.sh

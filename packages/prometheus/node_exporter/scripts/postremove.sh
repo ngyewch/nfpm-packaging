@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  purge)
+    rm -rf /var/lib/prometheus/node_exporter/ \
+        /var/log/prometheus/node_exporter.log \
+        /var/log/prometheus/node_exporter.log.* \
+        /run/prometheus/node_exporter.pid
+	# We do NOT remove the system user.
+	;;
+esac
+
+systemctl --system daemon-reload >/dev/null || true
+
+case "$1" in
+  purge)
+	systemctl purge node_exporter.service >/dev/null || true
+	;;
+esac
+
+exit 0
