@@ -9,5 +9,7 @@ packages:
     dir: packages/ory/oathkeeper
   - name: prometheus/node_exporter
     dir: packages/prometheus/node_exporter
+  - name: prometheus-community/PushProx
+    dir: packages/prometheus-community/PushProx
   - name: starship
     dir: packages/starship

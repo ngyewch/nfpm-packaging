@@ -1,0 +1,11 @@
+name: PushProx
+download:
+  url_template: https://github.com/prometheus-community/PushProx/releases/download/v${VERSION}/${NAME}-${VERSION}.linux-${ARCH}.tar.gz
+strip_components: 1
+outputs:
+  - arch: amd64
+  - arch: arm64
+  - arch: arm7
+    download:
+      env:
+        ARCH: armv7
