@@ -9,8 +9,8 @@ Group=ory
 Restart=on-failure
 RestartSec=30
 WorkingDirectory=/etc/ory/hydra
-EnvironmentFile=-/etc/default/hydra
-ExecStart=/usr/bin/hydra serve all --config /etc/ory/hydra/%i.yml ${ARGS}
+EnvironmentFile=/etc/default/hydra
+ExecStart=/usr/bin/hydra serve all --config /etc/ory/hydra/%i.yml $HYDRA_OPTS
 
 [Install]
 WantedBy=multi-user.target

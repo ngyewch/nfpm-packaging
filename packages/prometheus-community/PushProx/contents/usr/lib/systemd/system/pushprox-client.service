@@ -8,13 +8,8 @@ Wants=network-online.target nss-lookup.target
 Restart=on-failure
 User=prometheus
 Group=prometheus
-Environment="METRICS_ADDR=:9369"
-Environment="PROXY_RETRY_INITIAL_WAIT=1s"
-Environment="PROXY_RETRY_MAX_WAIT=5s"
-Environment="LOG_LEVEL=info"
-Environment="LOG_FORMAT=logfmt"
-EnvironmentFile=-/etc/default/pushprox-client
-ExecStart=/usr/bin/pushprox-client --fqdn=${FQDN} --proxy-url=${PROXY_URL} --metrics-addr=${METRICS_ADDR} --proxy.retry.initial-wait=${PROXY_RETRY_INITIAL_WAIT} --proxy.retry.max-wait=${PROXY_RETRY_MAX_WAIT} --log.level=${LOG_LEVEL} --log.format=${LOG_FORMAT}
+EnvironmentFile=/etc/default/pushprox-client
+ExecStart=/usr/bin/pushprox-client $PUSHPROX_CLIENT_OPTS
 
 [Install]
 WantedBy=multi-user.target

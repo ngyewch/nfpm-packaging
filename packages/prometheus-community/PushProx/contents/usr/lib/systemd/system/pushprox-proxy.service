@@ -8,14 +8,8 @@ Wants=network-online.target nss-lookup.target
 Restart=on-failure
 User=prometheus
 Group=prometheus
-Environment="WEB_LISTEN_ADDRESS=:8080"
-Environment="REGISTRATION_TIMEOUT=5m"
-Environment="SCRAPE_MAX_TIMEOUT=5m"
-Environment="SCRAPE_DEFAULT_TIMEOUT=15s"
-Environment="LOG_LEVEL=info"
-Environment="LOG_FORMAT=logfmt"
-EnvironmentFile=-/etc/default/pushprox-proxy
-ExecStart=/usr/bin/pushprox-proxy --web.listen-address=${WEB_LISTEN_ADDRESS} --registration.timeout=${REGISTRATION_TIMEOUT} --scrape.max-timeout=${SCRAPE_MAX_TIMEOUT} --scrape.default-timeout=${SCRAPE_DEFAULT_TIMEOUT} --log.level=${LOG_LEVEL} --log.format=${LOG_FORMAT}
+EnvironmentFile=/etc/default/pushprox-proxy
+ExecStart=/usr/bin/pushprox-proxy $PUSHPROX_PROXY_OPTS
 
 [Install]
 WantedBy=multi-user.target
