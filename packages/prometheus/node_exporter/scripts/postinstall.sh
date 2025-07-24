@@ -4,6 +4,12 @@ set -e
 
 case "$1" in
   configure|1|2)
+    if [ ! -f /etc/default/pushprox_proxy ]; then
+      echo 'PUSHPROX_PROXY_OPTS=""' > /etc/default/pushprox_proxy
+    fi
+    if [ ! -f /etc/default/pushprox_client ]; then
+      echo 'PUSHPROX_CLIENT_OPTS=""' > /etc/default/pushprox_client
+    fi
     systemctl daemon-reload
   ;;
 

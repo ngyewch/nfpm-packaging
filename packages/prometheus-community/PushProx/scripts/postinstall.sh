@@ -4,6 +4,12 @@ set -e
 
 case "$1" in
   configure|1|2)
+    if [ ! -f /etc/default/node_exporter ]; then
+      echo 'NODE_EXPORTER_OPTS=""' > /etc/default/node_exporter
+    fi
+    if [ ! -f /etc/default/node_exporter ]; then
+      echo 'NODE_EXPORTER_OPTS=""' > /etc/default/node_exporter
+    fi
     systemctl daemon-reload
   ;;
 

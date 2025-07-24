@@ -3,15 +3,7 @@
 set -e
 
 case "$1" in
-  remove|upgrade|disappear|failed-upgrade|abort-install|abort-upgrade)
-  ;;
-
-  purge|0)
-    rm -rf /var/lib/prometheus/node_exporter/ \
-        /var/log/prometheus/node_exporter.log \
-        /var/log/prometheus/node_exporter.log.* \
-        /run/prometheus/node_exporter.pid
-    # We do NOT remove the system user.
+  remove|purge|upgrade|disappear|failed-upgrade|abort-install|abort-upgrade)
   ;;
 
   *)

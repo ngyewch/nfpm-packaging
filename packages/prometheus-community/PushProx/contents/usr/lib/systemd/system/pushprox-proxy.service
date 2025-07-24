@@ -8,7 +8,7 @@ Wants=network-online.target nss-lookup.target
 Restart=on-failure
 User=prometheus
 Group=prometheus
-EnvironmentFile=/etc/default/pushprox-proxy
+EnvironmentFile=-/etc/default/pushprox-proxy
 ExecStart=/usr/bin/pushprox-proxy $PUSHPROX_PROXY_OPTS
 
 [Install]
