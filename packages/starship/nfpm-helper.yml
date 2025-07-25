@@ -2,6 +2,10 @@ name: starship
 download:
   url_template: https://github.com/starship/starship/releases/download/v${VERSION}/${NAME}-${ARCH}.tar.gz
 outputs:
+  - arch: '386'
+    download:
+      env:
+        ARCH: i686-unknown-linux-musl
   - arch: amd64
     download:
       env:

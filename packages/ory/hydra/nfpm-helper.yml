@@ -2,8 +2,20 @@ name: hydra
 download:
   url_template: https://github.com/ory/hydra/releases/download/v${VERSION}/${NAME}_${VERSION}-linux_${ARCH}.tar.gz
 outputs:
+  - arch: '386'
+    download:
+      env:
+        ARCH: 32bit
   - arch: amd64
     download:
       env:
         ARCH: 64bit
   - arch: arm64
+  - arch: arm6
+    download:
+      env:
+        ARCH: armv6
+  - arch: arm7
+    download:
+      env:
+        ARCH: armv7

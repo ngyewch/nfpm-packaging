@@ -3,8 +3,17 @@ download:
   url_template: https://github.com/prometheus/node_exporter/releases/download/v${VERSION}/${NAME}-${VERSION}.linux-${ARCH}.tar.gz
 strip_components: 1
 outputs:
+  - arch: '386'
   - arch: amd64
   - arch: arm64
+  - arch: arm5
+    download:
+      env:
+        ARCH: armv5
+  - arch: arm6
+    download:
+      env:
+        ARCH: armv6
   - arch: arm7
     download:
       env:

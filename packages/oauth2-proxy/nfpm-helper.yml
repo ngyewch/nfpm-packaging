@@ -5,3 +5,15 @@ strip_components: 1
 outputs:
   - arch: amd64
   - arch: arm64
+  - arch: arm5
+    download:
+      env:
+        ARCH: armv5
+  - arch: arm6
+    download:
+      env:
+        ARCH: armv6
+  - arch: arm7
+    download:
+      env:
+        ARCH: armv7
