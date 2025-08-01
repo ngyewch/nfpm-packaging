@@ -7,16 +7,9 @@ case "$1" in
     if [ ! -f /etc/default/node_exporter ]; then
       echo 'NODE_EXPORTER_OPTS=""' > /etc/default/node_exporter
     fi
-    systemctl daemon-reload
-  ;;
-
-  abort-upgrade|abort-remove|abort-deconfigure)
-  ;;
-
-  *)
-    echo "postinstall.sh called with unknown argument '$1'" >&2
-    exit 1
   ;;
 esac
+
+systemctl --system daemon-reload >/dev/null || true
 
 exit 0

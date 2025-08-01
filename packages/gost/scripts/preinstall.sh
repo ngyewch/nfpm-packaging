@@ -12,14 +12,6 @@ case "$1" in
         && [ -n "${EXIT_CODE+set}" ] && [ "${EXIT_CODE}" -ne 9 ] \
         && exit ${EXIT_CODE}
   ;;
-
-  abort-upgrade)
-  ;;
-
-  *)
-    echo "preinstall.sh called with unknown argument '$1'" >&2
-    exit 1
-  ;;
 esac
 
 exit 0

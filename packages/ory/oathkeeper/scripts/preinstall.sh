@@ -13,14 +13,6 @@ case "$1" in
         && exit ${EXIT_CODE}
     mkdir -p /etc/ory/oathkeeper /var/lib/${SERVICE_USER}/oathkeeper
   ;;
-
-  abort-upgrade)
-  ;;
-
-  *)
-    echo "preinstall.sh called with unknown argument '$1'" >&2
-    exit 1
-  ;;
 esac
 
 exit 0

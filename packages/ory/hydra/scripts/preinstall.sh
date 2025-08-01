@@ -13,14 +13,6 @@ case "$1" in
         && exit ${EXIT_CODE}
     mkdir -p /etc/ory/hydra /var/lib/${SERVICE_USER}/hydra
   ;;
-
-  abort-upgrade)
-  ;;
-
-  *)
-    echo "preinstall.sh called with unknown argument '$1'" >&2
-    exit 1
-  ;;
 esac
 
 exit 0
