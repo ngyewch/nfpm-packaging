@@ -13,3 +13,5 @@ packages:
     dir: packages/prometheus-community/PushProx
   - name: starship
     dir: packages/starship
+  - name: tlsproxy
+    dir: packages/tlsproxy

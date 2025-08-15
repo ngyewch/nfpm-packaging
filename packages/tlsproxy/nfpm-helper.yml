@@ -1,0 +1,10 @@
+name: tlsproxy
+download:
+  url_template: https://github.com/c2FmZQ/tlsproxy/releases/download/v${VERSION}/${NAME}-linux-${ARCH}
+outputs:
+  - arch: amd64
+  - arch: arm64
+  - arch: arm7
+    download:
+      env:
+        ARCH: arm
