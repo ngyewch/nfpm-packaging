@@ -1,0 +1,19 @@
+name: lego
+download:
+  url_template: https://github.com/go-acme/lego/releases/download/v${VERSION}/${NAME}_v${VERSION}_linux_${ARCH}.tar.gz
+outputs:
+  - arch: '386'
+  - arch: amd64
+  - arch: arm64
+  - arch: arm5
+    download:
+      env:
+        ARCH: armv5
+  - arch: arm6
+    download:
+      env:
+        ARCH: armv6
+  - arch: arm7
+    download:
+      env:
+        ARCH: armv7

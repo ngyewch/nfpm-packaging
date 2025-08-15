@@ -1,0 +1,14 @@
+name: ${NAME}
+arch: ${ARCH}
+version: ${VERSION}
+priority: optional
+maintainer: Nick Ng <ngyewch@gmail.com>
+description: |
+  Let's Encrypt/ACME client and library written in Go
+homepage: https://github.com/go-acme/lego
+license: MIT
+
+contents:
+  - src: ${ARCHIVE_DIR}/lego
+    dst: /usr/bin/lego
+    expand: true
