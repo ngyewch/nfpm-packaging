@@ -1,4 +1,4 @@
-# gost
+# nats-io/nats-server
 
 * Website: https://nats.io/
 * Repository: https://github.com/nats-io/nats-server

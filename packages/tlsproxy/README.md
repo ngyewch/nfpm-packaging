@@ -1,4 +1,4 @@
-# gost
+# tlsproxy
 
 * Website: https://github.com/c2FmZQ/tlsproxy
 * Repository: https://github.com/c2FmZQ/tlsproxy
