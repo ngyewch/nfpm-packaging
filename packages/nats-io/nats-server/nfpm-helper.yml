@@ -1,0 +1,10 @@
+name: nats-server
+download:
+  url_template: https://github.com/nats-io/nats-server/releases/download/v${VERSION}/${NAME}-v${VERSION}-linux-${ARCH}.tar.gz
+strip_components: 1
+outputs:
+  - arch: '386'
+  - arch: amd64
+  - arch: arm64
+  - arch: arm6
+  - arch: arm7

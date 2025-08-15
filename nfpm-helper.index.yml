@@ -1,6 +1,8 @@
 packages:
   - name: gost
     dir: packages/gost
+  - name: nats-io/nats-server
+    dir: packages/nats-io/nats-server
   - name: oauth2-proxy
     dir: packages/oauth2-proxy
   - name: ory/hydra
