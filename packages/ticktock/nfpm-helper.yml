@@ -1,0 +1,19 @@
+name: ticktock
+download:
+  url_template: https://github.com/ytyou/ticktock/releases/download/v${VERSION}/ticktockdb-${VERSION}-glibc${GLIBC_VERSION}-${ARCH}.tar.gz
+outputs:
+  - arch: amd64
+    download:
+      env:
+        ARCH: x86_64
+        GLIBC_VERSION: 2.36
+  - arch: arm64
+    download:
+      env:
+        ARCH: aarch64
+        GLIBC_VERSION: 2.36
+  - arch: arm6
+    download:
+      env:
+        ARCH: armv6l
+        GLIBC_VERSION: 2.28

@@ -1,0 +1,15 @@
+[Unit]
+Description=ticktock service
+After=network.target network-online.target nss-lookup.target basic.target
+Wants=network-online.target nss-lookup.target
+
+[Service]
+User=ticktock
+Group=ticktock
+Restart=on-failure
+RestartSec=30
+ExecStart=/usr/bin/tt -c /etc/ticktock/tt.conf
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
