@@ -1,0 +1,10 @@
+name: traefik
+download:
+  url_template: https://github.com/traefik/traefik/releases/download/v${VERSION}/${NAME}_v${VERSION}_linux_${ARCH}.tar.gz
+outputs:
+  - arch: amd64
+  - arch: arm64
+  - arch: arm7
+    download:
+      env:
+        ARCH: armv7
