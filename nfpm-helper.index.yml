@@ -17,5 +17,9 @@ packages:
     dir: packages/prometheus-community/PushProx
   - name: starship
     dir: packages/starship
+  - name: ticktock
+    dir: packages/ticktock
   - name: tlsproxy
     dir: packages/tlsproxy
+  - name: traefik
+    dir: packages/traefik
